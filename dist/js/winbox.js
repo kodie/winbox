@@ -878,9 +878,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
       return new WinBox(params);
     }
     index || setup();
-    this.dom = (0,module$src$js$template["default"])();
-    this.body = (0,module$src$js$helper.getByClass)(this.dom, "wb-body");
-    let id, root, title, mount, html, url, width, height, minwidth, minheight, x, y, max, top, left, bottom, right, modal, onclose, onfocus, onblur, onmove, onresize, background, border, classname, splitscreen;
+    let id, root, customTemplate, title, mount, html, url, width, height, minwidth, minheight, x, y, max, hidden, top, left, bottom, right, modal, onclose, onfocus, onblur, onmove, onresize, background, border, classname, splitscreen, dynamicsize, clonedBody, contentWidth, contentHeight;
     if (params) {
       if (_title) {
         title = params;
@@ -894,6 +892,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         }
         id = params["id"];
         root = params["root"];
+        customTemplate = params["template"];
         title = title || params["title"];
         mount = params["mount"];
         html = params["html"];
@@ -905,6 +904,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         x = params["x"] || x;
         y = params["y"] || y;
         max = params["max"];
+        hidden = params["hidden"];
         top = params["top"];
         left = params["left"];
         bottom = params["bottom"];
@@ -919,11 +919,32 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         border = params["border"];
         classname = params["class"];
         splitscreen = params["splitscreen"];
-        if (background) {
-          this.setBackground(background);
-        }
-        if (border) {
-          (0,module$src$js$helper.setStyle)(this.body, "margin", border + (isNaN(border) ? "" : "px"));
+        dynamicsize = params["dynamicsize"];
+      }
+    }
+    if (customTemplate) {
+      this.dom = customTemplate;
+    } else {
+      this.dom = (0,module$src$js$template["default"])();
+    }
+    this.body = (0,module$src$js$helper.getByClass)(this.dom, "wb-body");
+    index = index || 10;
+    this.dom.id = this.id = id || "winbox-" + ++id_counter;
+    this.dom.className = "winbox" + (classname ? " " + (typeof classname === "string" ? classname : classname.join(" ")) : "") + (modal ? " modal" : "");
+    if (background) {
+      this.setBackground(background);
+    }
+    if (border) {
+      (0,module$src$js$helper.setStyle)(this.body, "margin", border + (isNaN(border) ? "" : "px"));
+    }
+    if (mount) {
+      this.mount(mount);
+    } else {
+      if (html) {
+        this.body.innerHTML = html;
+      } else {
+        if (url) {
+          this.setUrl(url);
         }
       }
     }
@@ -936,15 +957,32 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
     right = right ? parse(right, max_width) : 0;
     max_width -= left + right;
     max_height -= top + bottom;
-    width = width ? parse(width, max_width) : max_width / 2 | 0;
-    height = height ? parse(height, max_height) : max_height / 2 | 0;
+    if (dynamicsize && (!width || !height)) {
+      clonedBody = this.body.cloneNode(true);
+      (0,module$src$js$helper.setStyle)(clonedBody, "contain", "unset");
+      (0,module$src$js$helper.setStyle)(clonedBody, "margin", "");
+      (0,module$src$js$helper.setStyle)(clonedBody, "position", "relative");
+      (0,module$src$js$helper.setStyle)(clonedBody, "visibility", "hidden");
+      if (!(0,module$src$js$helper.hasClass)(this.dom, "no-header")) {
+        clonedBody.insertAdjacentElement("afterbegin", (0,module$src$js$helper.getByClass)(this.dom, "wb-title").cloneNode(true));
+      }
+      if (width) {
+        (0,module$src$js$helper.setStyle)(clonedBody, "width", parse(width, max_width));
+      }
+      if (height) {
+        (0,module$src$js$helper.setStyle)(clonedBody, "height", parse(width, max_width));
+      }
+      (root || body).appendChild(clonedBody);
+      contentWidth = Math.min(clonedBody.clientWidth, max_width);
+      contentHeight = Math.min(clonedBody.clientHeight, max_height);
+      (root || body).removeChild(clonedBody);
+    }
+    width = width ? parse(width, max_width) : contentWidth || max_width / 2 | 0;
+    height = height ? parse(height, max_height) : contentHeight || max_height / 2 | 0;
     minwidth = minwidth ? parse(minwidth, max_width) : 0;
     minheight = minheight ? parse(minheight, max_height) : 0;
     x = x ? parse(x, max_width, width) : left;
     y = y ? parse(y, max_height, height) : top;
-    index = index || 10;
-    this.dom.id = this.id = id || "winbox-" + ++id_counter;
-    this.dom.className = "winbox" + (classname ? " " + (typeof classname === "string" ? classname : classname.join(" ")) : "") + (modal ? " modal" : "");
     this.x = x;
     this.y = y;
     this.width = width;
@@ -969,18 +1007,12 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
     } else {
       this.move().resize();
     }
-    this.focus();
-    if (mount) {
-      this.mount(mount);
+    if (hidden) {
+      this.hide();
     } else {
-      if (html) {
-        this.body.innerHTML = html;
-      } else {
-        if (url) {
-          this.setUrl(url);
-        }
-      }
+      this.focus();
     }
+    this.dom.winbox = this;
     register(this);
     (root || body).appendChild(this.dom);
   }
@@ -1072,12 +1104,14 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         tile_len[key] = 1;
       }
     }
-    for (let i = 0, self, key, width; i < len; i++) {
+    for (let i = 0, self, key, width, header, headerHeight; i < len; i++) {
       self = stack_min[i];
       key = self.left + ":" + self.top;
       width = Math.min((root_w - self.left - self.right) / tile_len[key], 250);
+      header = (0,module$src$js$helper.getByClass)(self.dom, "wb-title");
+      headerHeight = header.clientHeight;
       tile_index[key] || (tile_index[key] = 0);
-      self.resize(width + 1 | 0, 35, true).move(self.left + tile_index[key] * width | 0, root_h - self.bottom - 35, true);
+      self.resize(width + 1 | 0, 0, true).move(self.left + tile_index[key] * width | 0, root_h - self.bottom - headerHeight, true);
       tile_index[key]++;
     }
   }
@@ -1172,7 +1206,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
           self.width = Math.max(Math.min(self.width, root_w - self.x - self.right), 150);
         }
         if (resize_h) {
-          self.height = Math.max(Math.min(self.height, root_h - self.y - self.bottom), 35);
+          self.height = Math.max(Math.min(self.height, root_h - self.y - self.bottom), 0);
         }
         use_raf ? raf_resize = true : self.resize();
       }
@@ -1410,6 +1444,12 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
   module$src$js$winbox["default"].right;
   module$src$js$winbox["default"].bottom;
   module$src$js$winbox["default"].left;
+  module$src$js$winbox["default"].onclose;
+  module$src$js$winbox["default"].onfocus;
+  module$src$js$winbox["default"].onblur;
+  module$src$js$winbox["default"].onmove;
+  module$src$js$winbox["default"].onresize;
+  module$src$js$winbox["default"].winbox;
   window["WinBox"] = module$src$js$winbox["default"];
 }, "src/js/webpack.js", ["src/js/winbox.js"]);
 

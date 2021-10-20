@@ -785,7 +785,7 @@ $jscomp.polyfill("Set", function(NativeSet) {
   };
 })();
 this.CLOSURE_EVAL_PREFILTER = function(s) { return s; };(function(thisValue){var isChrome87 = false; try {isChrome87 =  eval(trustedTypes.emptyScript) !== trustedTypes.emptyScript } catch (e) {} if (typeof trustedTypes !== 'undefined' && trustedTypes.createPolicy &&isChrome87 ) {  var policy = trustedTypes.createPolicy('goog#devserver',{ createScript: function(s){ return s; }});  thisValue.CLOSURE_EVAL_PREFILTER = policy.createScript.bind(policy);}})(this);//tmp/style.js
-const style = document.createElement("style");style.innerHTML = "@keyframes fade-in{0%{opacity:0}to{opacity:.85}}.winbox.modal:after,.winbox.modal:before{content:''}.no-move:not(.min) .wb-title,.winbox.max .wb-body~div,.winbox.min .wb-body~div,.winbox.modal .wb-body~div,.winbox.modal .wb-title,body.wb-drag iframe{pointer-events:none}.winbox{position:fixed;left:0;top:0;background:#0050ff;box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);transition:width .3s,height .3s,transform .3s;transition-timing-function:cubic-bezier(.3,1,.3,1);will-change:transform,width,height;contain:layout size;text-align:left;touch-action:none}.wb-body,.wb-header,.wb-n,.winbox iframe{position:absolute}.max,.no-shadow{box-shadow:none}.no-animation,body.wb-drag .winbox{transition:none}.wb-header{left:0;top:0;width:100%;height:35px;color:#fff;overflow:hidden}.wb-body{left:0;right:0;top:35px;bottom:0;overflow:auto;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;will-change:contents;background:#fff;margin-top:0!important;contain:strict}.wb-title{font-family:Arial,sans-serif;font-size:14px;padding-left:10px;cursor:move;height:35px;line-height:35px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wb-n,.wb-s{left:0;height:10px}.wb-n{top:-5px;right:0;cursor:n-resize}.wb-e,.wb-w{top:0;width:10px;position:absolute}.wb-e{right:-5px;bottom:0;cursor:w-resize}.wb-s{position:absolute;bottom:-5px;right:0;cursor:n-resize}.wb-nw,.wb-sw,.wb-w{left:-5px}.wb-w{bottom:0;cursor:w-resize}.wb-ne,.wb-nw,.wb-sw{width:15px;height:15px;position:absolute}.wb-nw{top:-5px;cursor:nw-resize}.wb-ne,.wb-sw{cursor:ne-resize}.wb-ne{top:-5px;right:-5px}.wb-se,.wb-sw{bottom:-5px}.wb-se{position:absolute;right:-5px;width:15px;height:15px;cursor:nw-resize}.wb-icon{float:right;height:35px;max-width:100%;text-align:center}.wb-icon *{display:inline-block;width:30px;height:100%;background-position:center;background-repeat:no-repeat;cursor:pointer;max-width:100%}.no-close .wb-close,.no-full .wb-full,.no-header .wb-header,.no-max .wb-max,.no-min .wb-min,.no-resize .wb-body~div,.winbox.min .wb-body>*,.winbox.min .wb-full,.winbox.min .wb-min,.winbox.modal .wb-full,.winbox.modal .wb-max,.winbox.modal .wb-min{display:none}.winbox.max .wb-title,.winbox.min .wb-title{cursor:default}.wb-min{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNOCAwaDdhMSAxIDAgMCAxIDAgMkgxYTEgMSAwIDAgMSAwLTJoN3oiLz48L3N2Zz4=);background-size:14px auto;background-position:center bottom 11px}.wb-max{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNmZmYiIHZpZXdCb3g9IjAgMCA5NiA5NiI+PHBhdGggZD0iTTIwIDcxLjMxMUMxNS4zNCA2OS42NyAxMiA2NS4yMyAxMiA2MFYyMGMwLTYuNjMgNS4zNy0xMiAxMi0xMmg0MGM1LjIzIDAgOS42NyAzLjM0IDExLjMxMSA4SDI0Yy0yLjIxIDAtNCAxLjc5LTQgNHY1MS4zMTF6Ii8+PHBhdGggZD0iTTkyIDc2VjM2YzAtNi42My01LjM3LTEyLTEyLTEySDQwYy02LjYzIDAtMTIgNS4zNy0xMiAxMnY0MGMwIDYuNjMgNS4zNyAxMiAxMiAxMmg0MGM2LjYzIDAgMTItNS4zNyAxMi0xMnptLTUyIDRjLTIuMjEgMC00LTEuNzktNC00VjM2YzAtMi4yMSAxLjc5LTQgNC00aDQwYzIuMjEgMCA0IDEuNzkgNCA0djQwYzAgMi4yMS0xLjc5IDQtNCA0SDQweiIvPjwvc3ZnPg==);background-size:17px auto}.wb-close{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDE4IDE4Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJtMS42MTMuMjEuMDk0LjA4M0w4IDYuNTg1IDE0LjI5My4yOTNsLjA5NC0uMDgzYTEgMSAwIDAgMSAxLjQwMyAxLjQwM2wtLjA4My4wOTRMOS40MTUgOGw2LjI5MiA2LjI5M2ExIDEgMCAwIDEtMS4zMiAxLjQ5N2wtLjA5NC0uMDgzTDggOS40MTVsLTYuMjkzIDYuMjkyLS4wOTQuMDgzQTEgMSAwIDAgMSAuMjEgMTQuMzg3bC4wODMtLjA5NEw2LjU4NSA4IC4yOTMgMS43MDdBMSAxIDAgMCAxIDEuNjEzLjIxeiIvPjwvc3ZnPg==);background-size:15px auto}.wb-full{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjIuNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOCAzSDVhMiAyIDAgMCAwLTIgMnYzbTE4IDBWNWEyIDIgMCAwIDAtMi0yaC0zbTAgMThoM2EyIDIgMCAwIDAgMi0ydi0zTTMgMTZ2M2EyIDIgMCAwIDAgMiAyaDMiLz48L3N2Zz4=);background-size:16px auto}.max .wb-body{margin:0!important}.winbox iframe{width:100%;height:100%;border:0}.winbox.modal:before{position:absolute;top:0;left:0;right:0;bottom:0;background:inherit;border-radius:inherit}.winbox.modal:after{position:absolute;top:-100vh;left:-100vw;right:-100vw;bottom:-100vh;background:#0d1117;animation:fade-in .2s ease-out forwards;z-index:-1}.no-header .wb-body{top:0}";const head = document.getElementsByTagName("head")[0];if(head.firstChild) head.insertBefore(style, head.firstChild); else head.appendChild(style);
+const style = document.createElement("style");style.innerHTML = "@keyframes fade-in{0%{opacity:0}to{opacity:.85}}.winbox.modal:after,.winbox.modal:before{content:''}.no-move:not(.min) .wb-title,.winbox.max .wb-body~div,.winbox.min .wb-body~div,.winbox.modal .wb-body~div,.winbox.modal .wb-title,body.wb-drag iframe{pointer-events:none}.winbox{position:fixed;left:0;top:0;background:#0050ff;box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);transition:width .3s,height .3s,transform .3s;transition-timing-function:cubic-bezier(.3,1,.3,1);will-change:transform,width,height;contain:layout size;text-align:left;touch-action:none;min-height:35px}.wb-body,.wb-header,.wb-n,.winbox iframe{position:absolute}.max,.no-shadow{box-shadow:none}.no-animation,body.wb-drag .winbox{transition:none}.wb-header,.wb-icon{height:35px}.wb-n,.wb-s{left:0;height:10px}.wb-body{top:35px}.wb-header{left:0;top:0;width:100%;color:#fff;overflow:hidden}.wb-body{left:0;right:0;bottom:0;overflow:auto;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;will-change:contents;background:#fff;margin-top:0!important;contain:strict}.wb-title{line-height:35px;font-family:Arial,sans-serif;font-size:14px;padding-left:10px;cursor:move;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wb-n{top:-5px;right:0;cursor:n-resize}.wb-e,.wb-w{top:0;width:10px;position:absolute}.wb-e{right:-5px;bottom:0;cursor:w-resize}.wb-s{position:absolute;bottom:-5px;right:0;cursor:n-resize}.wb-nw,.wb-sw,.wb-w{left:-5px}.wb-w{bottom:0;cursor:w-resize}.wb-ne,.wb-nw,.wb-sw{width:15px;height:15px;position:absolute}.wb-nw{top:-5px;cursor:nw-resize}.wb-ne,.wb-sw{cursor:ne-resize}.wb-ne{top:-5px;right:-5px}.wb-se,.wb-sw{bottom:-5px}.wb-se{position:absolute;right:-5px;width:15px;height:15px;cursor:nw-resize}.wb-icon{float:right;max-width:100%;text-align:center}.wb-icon *{display:inline-block;width:30px;height:100%;background-position:center;background-repeat:no-repeat;cursor:pointer;max-width:100%}.no-close .wb-close,.no-full .wb-full,.no-header .wb-header,.no-max .wb-max,.no-min .wb-min,.no-resize .wb-body~div,.winbox.hide,.winbox.min .wb-body>*,.winbox.min .wb-full,.winbox.min .wb-min,.winbox.modal .wb-full,.winbox.modal .wb-max,.winbox.modal .wb-min{display:none}.winbox.max .wb-title,.winbox.min .wb-title{cursor:default}.wb-min{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNOCAwaDdhMSAxIDAgMCAxIDAgMkgxYTEgMSAwIDAgMSAwLTJoN3oiLz48L3N2Zz4=);background-size:14px auto;background-position:center bottom 11px}.wb-max{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNmZmYiIHZpZXdCb3g9IjAgMCA5NiA5NiI+PHBhdGggZD0iTTIwIDcxLjMxMUMxNS4zNCA2OS42NyAxMiA2NS4yMyAxMiA2MFYyMGMwLTYuNjMgNS4zNy0xMiAxMi0xMmg0MGM1LjIzIDAgOS42NyAzLjM0IDExLjMxMSA4SDI0Yy0yLjIxIDAtNCAxLjc5LTQgNHY1MS4zMTF6Ii8+PHBhdGggZD0iTTkyIDc2VjM2YzAtNi42My01LjM3LTEyLTEyLTEySDQwYy02LjYzIDAtMTIgNS4zNy0xMiAxMnY0MGMwIDYuNjMgNS4zNyAxMiAxMiAxMmg0MGM2LjYzIDAgMTItNS4zNyAxMi0xMnptLTUyIDRjLTIuMjEgMC00LTEuNzktNC00VjM2YzAtMi4yMSAxLjc5LTQgNC00aDQwYzIuMjEgMCA0IDEuNzkgNCA0djQwYzAgMi4yMS0xLjc5IDQtNCA0SDQweiIvPjwvc3ZnPg==);background-size:17px auto}.wb-close{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDE4IDE4Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJtMS42MTMuMjEuMDk0LjA4M0w4IDYuNTg1IDE0LjI5My4yOTNsLjA5NC0uMDgzYTEgMSAwIDAgMSAxLjQwMyAxLjQwM2wtLjA4My4wOTRMOS40MTUgOGw2LjI5MiA2LjI5M2ExIDEgMCAwIDEtMS4zMiAxLjQ5N2wtLjA5NC0uMDgzTDggOS40MTVsLTYuMjkzIDYuMjkyLS4wOTQuMDgzQTEgMSAwIDAgMSAuMjEgMTQuMzg3bC4wODMtLjA5NEw2LjU4NSA4IC4yOTMgMS43MDdBMSAxIDAgMCAxIDEuNjEzLjIxeiIvPjwvc3ZnPg==);background-size:15px auto}.wb-full{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjIuNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOCAzSDVhMiAyIDAgMCAwLTIgMnYzbTE4IDBWNWEyIDIgMCAwIDAtMi0yaC0zbTAgMThoM2EyIDIgMCAwIDAgMi0ydi0zTTMgMTZ2M2EyIDIgMCAwIDAgMiAyaDMiLz48L3N2Zz4=);background-size:16px auto}.winbox.hide{visibility:hidden}.max .wb-body{margin:0!important}.winbox iframe{width:100%;height:100%;border:0}.winbox.modal:before{position:absolute;top:0;left:0;right:0;bottom:0;background:inherit;border-radius:inherit}.winbox.modal:after{position:absolute;top:-100vh;left:-100vw;right:-100vw;bottom:-100vh;background:#0d1117;animation:fade-in .2s ease-out forwards;z-index:-1}.no-header .wb-body{top:0}";const head = document.getElementsByTagName("head")[0];if(head.firstChild) head.insertBefore(style, head.firstChild); else head.appendChild(style);
 //src/js/template.js
 $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
   "use strict";
@@ -880,9 +880,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
       return new WinBox(params);
     }
     index || setup();
-    this.dom = (0,module$src$js$template["default"])();
-    this.body = (0,module$src$js$helper.getByClass)(this.dom, "wb-body");
-    let id, root, title, mount, html, url, width, height, minwidth, minheight, x, y, max, top, left, bottom, right, modal, onclose, onfocus, onblur, onmove, onresize, background, border, classname, splitscreen;
+    let id, root, customTemplate, title, mount, html, url, width, height, minwidth, minheight, x, y, max, hidden, top, left, bottom, right, modal, onclose, onfocus, onblur, onmove, onresize, background, border, classname, splitscreen, dynamicsize, clonedBody, contentWidth, contentHeight;
     if (params) {
       if (_title) {
         title = params;
@@ -896,6 +894,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         }
         id = params["id"];
         root = params["root"];
+        customTemplate = params["template"];
         title = title || params["title"];
         mount = params["mount"];
         html = params["html"];
@@ -907,6 +906,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         x = params["x"] || x;
         y = params["y"] || y;
         max = params["max"];
+        hidden = params["hidden"];
         top = params["top"];
         left = params["left"];
         bottom = params["bottom"];
@@ -921,11 +921,32 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         border = params["border"];
         classname = params["class"];
         splitscreen = params["splitscreen"];
-        if (background) {
-          this.setBackground(background);
-        }
-        if (border) {
-          (0,module$src$js$helper.setStyle)(this.body, "margin", border + (isNaN(border) ? "" : "px"));
+        dynamicsize = params["dynamicsize"];
+      }
+    }
+    if (customTemplate) {
+      this.dom = customTemplate;
+    } else {
+      this.dom = (0,module$src$js$template["default"])();
+    }
+    this.body = (0,module$src$js$helper.getByClass)(this.dom, "wb-body");
+    index = index || 10;
+    this.dom.id = this.id = id || "winbox-" + ++id_counter;
+    this.dom.className = "winbox" + (classname ? " " + (typeof classname === "string" ? classname : classname.join(" ")) : "") + (modal ? " modal" : "");
+    if (background) {
+      this.setBackground(background);
+    }
+    if (border) {
+      (0,module$src$js$helper.setStyle)(this.body, "margin", border + (isNaN(border) ? "" : "px"));
+    }
+    if (mount) {
+      this.mount(mount);
+    } else {
+      if (html) {
+        this.body.innerHTML = html;
+      } else {
+        if (url) {
+          this.setUrl(url);
         }
       }
     }
@@ -938,15 +959,32 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
     right = right ? parse(right, max_width) : 0;
     max_width -= left + right;
     max_height -= top + bottom;
-    width = width ? parse(width, max_width) : max_width / 2 | 0;
-    height = height ? parse(height, max_height) : max_height / 2 | 0;
+    if (dynamicsize && (!width || !height)) {
+      clonedBody = this.body.cloneNode(true);
+      (0,module$src$js$helper.setStyle)(clonedBody, "contain", "unset");
+      (0,module$src$js$helper.setStyle)(clonedBody, "margin", "");
+      (0,module$src$js$helper.setStyle)(clonedBody, "position", "relative");
+      (0,module$src$js$helper.setStyle)(clonedBody, "visibility", "hidden");
+      if (!(0,module$src$js$helper.hasClass)(this.dom, "no-header")) {
+        clonedBody.insertAdjacentElement("afterbegin", (0,module$src$js$helper.getByClass)(this.dom, "wb-title").cloneNode(true));
+      }
+      if (width) {
+        (0,module$src$js$helper.setStyle)(clonedBody, "width", parse(width, max_width));
+      }
+      if (height) {
+        (0,module$src$js$helper.setStyle)(clonedBody, "height", parse(width, max_width));
+      }
+      (root || body).appendChild(clonedBody);
+      contentWidth = Math.min(clonedBody.clientWidth, max_width);
+      contentHeight = Math.min(clonedBody.clientHeight, max_height);
+      (root || body).removeChild(clonedBody);
+    }
+    width = width ? parse(width, max_width) : contentWidth || max_width / 2 | 0;
+    height = height ? parse(height, max_height) : contentHeight || max_height / 2 | 0;
     minwidth = minwidth ? parse(minwidth, max_width) : 0;
     minheight = minheight ? parse(minheight, max_height) : 0;
     x = x ? parse(x, max_width, width) : left;
     y = y ? parse(y, max_height, height) : top;
-    index = index || 10;
-    this.dom.id = this.id = id || "winbox-" + ++id_counter;
-    this.dom.className = "winbox" + (classname ? " " + (typeof classname === "string" ? classname : classname.join(" ")) : "") + (modal ? " modal" : "");
     this.x = x;
     this.y = y;
     this.width = width;
@@ -971,18 +1009,12 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
     } else {
       this.move().resize();
     }
-    this.focus();
-    if (mount) {
-      this.mount(mount);
+    if (hidden) {
+      this.hide();
     } else {
-      if (html) {
-        this.body.innerHTML = html;
-      } else {
-        if (url) {
-          this.setUrl(url);
-        }
-      }
+      this.focus();
     }
+    this.dom.winbox = this;
     register(this);
     (root || body).appendChild(this.dom);
   }
@@ -1074,12 +1106,14 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         tile_len[key] = 1;
       }
     }
-    for (let i = 0, self, key, width; i < len; i++) {
+    for (let i = 0, self, key, width, header, headerHeight; i < len; i++) {
       self = stack_min[i];
       key = self.left + ":" + self.top;
       width = Math.min((root_w - self.left - self.right) / tile_len[key], 250);
+      header = (0,module$src$js$helper.getByClass)(self.dom, "wb-title");
+      headerHeight = header.clientHeight;
       tile_index[key] || (tile_index[key] = 0);
-      self.resize(width + 1 | 0, 35, true).move(self.left + tile_index[key] * width | 0, root_h - self.bottom - 35, true);
+      self.resize(width + 1 | 0, 0, true).move(self.left + tile_index[key] * width | 0, root_h - self.bottom - headerHeight, true);
       tile_index[key]++;
     }
   }
@@ -1174,7 +1208,7 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
           self.width = Math.max(Math.min(self.width, root_w - self.x - self.right), 150);
         }
         if (resize_h) {
-          self.height = Math.max(Math.min(self.height, root_h - self.y - self.bottom), 35);
+          self.height = Math.max(Math.min(self.height, root_h - self.y - self.bottom), 0);
         }
         use_raf ? raf_resize = true : self.resize();
       }
@@ -1412,6 +1446,12 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
   module$src$js$winbox["default"].right;
   module$src$js$winbox["default"].bottom;
   module$src$js$winbox["default"].left;
+  module$src$js$winbox["default"].onclose;
+  module$src$js$winbox["default"].onfocus;
+  module$src$js$winbox["default"].onblur;
+  module$src$js$winbox["default"].onmove;
+  module$src$js$winbox["default"].onresize;
+  module$src$js$winbox["default"].winbox;
   window["WinBox"] = module$src$js$winbox["default"];
 }, "src/js/webpack.js", ["src/js/winbox.js"]);
 
