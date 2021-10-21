@@ -967,10 +967,10 @@ $jscomp.registerAndLoadModule(function($$require, $$exports, $$module) {
         clonedBody.insertAdjacentElement("afterbegin", (0,module$src$js$helper.getByClass)(this.dom, "wb-title").cloneNode(true));
       }
       if (width) {
-        (0,module$src$js$helper.setStyle)(clonedBody, "width", parse(width, max_width));
+        (0,module$src$js$helper.setStyle)(clonedBody, "width", parse(width, max_width) + "px");
       }
       if (height) {
-        (0,module$src$js$helper.setStyle)(clonedBody, "height", parse(width, max_width));
+        (0,module$src$js$helper.setStyle)(clonedBody, "height", parse(width, max_width) + "px");
       }
       (root || body).appendChild(clonedBody);
       contentWidth = Math.min(clonedBody.clientWidth, max_width);
